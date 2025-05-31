@@ -3,6 +3,8 @@ import { FC } from 'react';
 import { TOrder } from '@utils-types';
 import { FeedInfoUI } from '../ui/feed-info';
 
+import { useSelector } from '../../services/store';
+
 const getOrders = (orders: TOrder[], status: string): number[] =>
   orders
     .filter((item) => item.status === status)
@@ -11,11 +13,14 @@ const getOrders = (orders: TOrder[], status: string): number[] =>
 
 export const FeedInfo: FC = () => {
   /** TODO: взять переменные из стора */
-  const orders: TOrder[] = [];
-  const feed = {};
-
+  const orders: TOrder[] = useSelector((state) => state.feeds.orders);
+  const totalFeeds = useSelector((state) => state.feeds.total);
+  const todayFeeds = useSelector((state) => state.feeds.totalToday);
+  const feed = {
+    total: totalFeeds,
+    totalToday: todayFeeds
+  };
   const readyOrders = getOrders(orders, 'done');
-
   const pendingOrders = getOrders(orders, 'pending');
 
   return (
