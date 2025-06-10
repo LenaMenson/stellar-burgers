@@ -1,5 +1,5 @@
 #Проектная работа stellar-burgers
-##первая итерация - 11 проектная работа 
+##первая итерация - 12 проектная работа (Тестирование)
 ###https://github.com/LenaMenson/stellar-burgers.git
 ####https://lenamenson.github.io/stellar-burgers/
 
