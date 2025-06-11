@@ -1,5 +1,5 @@
 #Проектная работа stellar-burgers
-##первая итерация - 12 проектная работа (Тестирование)
+##Вторая итерация - 12 проектная работа (Тестирование). Настроен baseUrl. Вынесены консттанты, селекторы. Добывлены alias.
 ###https://github.com/LenaMenson/stellar-burgers.git
 ####https://lenamenson.github.io/stellar-burgers/
 

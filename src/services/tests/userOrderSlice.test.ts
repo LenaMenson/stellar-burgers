@@ -7,17 +7,15 @@ import {
 } from '../slices/userOrder/userOrderSlice';
 
 describe('Тестирование экшенов слайса userOrder', () => {
-
   describe('Тестирование получения заказов пользователя', () => {
-
     const expectedResultUserOrders = [
       {
         _id: 'orderId_1',
         ingredients: ['bun', 'ingredient1', 'ingredient2', 'sauce'],
         status: 'done',
         name: 'Бургер_1',
-        createdAt: "2025-06-08T13:33:17.985Z",
-        updatedAt: "2025-06-08T13:33:17.985Z",
+        createdAt: '2025-06-08T13:33:17.985Z',
+        updatedAt: '2025-06-08T13:33:17.985Z',
         number: 3000
       },
       {
@@ -25,8 +23,8 @@ describe('Тестирование экшенов слайса userOrder', () =>
         ingredients: ['bun', 'ingredient1', 'sauce'],
         status: 'done',
         name: 'Бургер_2',
-        createdAt: "2025-06-08T13:34:17.985Z",
-        updatedAt: "2025-06-08T13:34:17.985Z",
+        createdAt: '2025-06-08T13:34:17.985Z',
+        updatedAt: '2025-06-08T13:34:17.985Z',
         number: 2000
       }
     ];
@@ -70,13 +68,13 @@ describe('Тестирование экшенов слайса userOrder', () =>
         owner: {
           name: 'User',
           email: 'User@mail.ru',
-          createdAt: "2025-06-08T13:34:17.985Z",
-          updatedAt: "2025-06-08T13:34:17.985Z",
+          createdAt: '2025-06-08T13:34:17.985Z',
+          updatedAt: '2025-06-08T13:34:17.985Z'
         },
         status: 'done',
         name: 'Бургер новый',
-        createdAt: "2025-06-08T13:34:17.985Z",
-        updatedAt: "2025-06-08T13:34:17.985Z",
+        createdAt: '2025-06-08T13:34:17.985Z',
+        updatedAt: '2025-06-08T13:34:17.985Z',
         number: 80708,
         price: 3000
       }
@@ -104,14 +102,10 @@ describe('Тестирование экшенов слайса userOrder', () =>
     it('Тест pending', () => {
       const state = userOrderSliceReducer(
         initialState,
-        newUserOrder.pending('fulfilled', [
-          'bun',
-          'ingredient',
-          'sauce'
-        ])
+        newUserOrder.pending('fulfilled', ['bun', 'ingredient', 'sauce'])
       );
       const orderRequest = state.orderRequest;
-      const status = state.loading; 
+      const status = state.loading;
       expect(orderRequest).toBeTruthy();
       expect(status).toBeTruthy();
     });
@@ -126,7 +120,7 @@ describe('Тестирование экшенов слайса userOrder', () =>
         ])
       );
       const orderRequest = state.orderRequest;
-      const status = state.loading; 
+      const status = state.loading;
       expect(orderRequest).toBeFalsy();
       expect(status).toBeFalsy();
     });

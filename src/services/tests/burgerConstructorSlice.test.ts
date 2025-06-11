@@ -8,7 +8,6 @@ import {
 } from '../slices/burgerConstructor/burgerConstructorSlice';
 
 describe('Тестирование экшенов слайса конструктора бургера', () => {
-
   const mockBun = {
     id: 'Булка',
     _id: 'Булка',
@@ -41,21 +40,20 @@ describe('Тестирование экшенов слайса конструк�
 
   const mockIngredient2 = {
     id: '2',
-    _id: "2",
-    name: "Ингредиент_2",
-    type: "main",
+    _id: '2',
+    name: 'Ингредиент_2',
+    type: 'main',
     proteins: 44,
     fat: 26,
     carbohydrates: 85,
     calories: 643,
     price: 988,
-    image: "https://code.s3.yandex.net/react/code/meat-03.png",
-    image_mobile: "https://code.s3.yandex.net/react/code/meat-03-mobile.png",
-    image_large: "https://code.s3.yandex.net/react/code/meat-03-large.png",
-  }
+    image: 'https://code.s3.yandex.net/react/code/meat-03.png',
+    image_mobile: 'https://code.s3.yandex.net/react/code/meat-03-mobile.png',
+    image_large: 'https://code.s3.yandex.net/react/code/meat-03-large.png'
+  };
 
   describe('Тестирование добавления и удаления продуктов (булка и ингредиент)', () => {
-
     it('Тест добавления булки в конструктор', () => {
       const state = burgerConstructorSliceReducer(
         initialState,
@@ -77,7 +75,6 @@ describe('Тестирование экшенов слайса конструк�
   });
 
   describe('Удаление продукта', () => {
-
     it('Тест удаления булки из конструктора', () => {
       const state = burgerConstructorSliceReducer(
         initialState,
@@ -105,7 +102,6 @@ describe('Тестирование экшенов слайса конструк�
   });
 
   describe('Тестирование перемещения продукта', () => {
-    
     const initialState = {
       constructorItems: {
         bun: null,
@@ -113,8 +109,8 @@ describe('Тестирование экшенов слайса конструк�
       }
     };
 
-    it('Тест перемещения ингредиента вверх', () => {   
-    const expectedResult = [mockIngredient2, mockIngredient1];
+    it('Тест перемещения ингредиента вверх', () => {
+      const expectedResult = [mockIngredient2, mockIngredient1];
       const state = burgerConstructorSliceReducer(
         initialState,
         moveupIngredient(mockIngredient2)

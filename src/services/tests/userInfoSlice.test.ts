@@ -10,7 +10,6 @@ import {
 } from '../slices/userInfo/userInfoSlice';
 
 describe('Тестирование экшенов слайса userInfo', () => {
-  
   const expectedResult = {
     success: true,
     accessToken: '',
@@ -23,13 +22,12 @@ describe('Тестирование экшенов слайса userInfo', () => 
   };
 
   describe('Тестирование getAuthUser', () => {
-   
     it('Тест fulfilled', () => {
       const state = userInfoSliceReducer(
         initialState,
         getAuthUser.fulfilled(expectedResult, 'fulfilled')
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -42,9 +40,9 @@ describe('Тестирование экшенов слайса userInfo', () => 
         initialState,
         getAuthUser.pending('pending')
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
-      expect(status).toBeTruthy();  
+      expect(status).toBeTruthy();
       expect(success).toBeFalsy();
     });
 
@@ -53,7 +51,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
         initialState,
         getAuthUser.rejected(new Error('error'), 'rejected')
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -63,7 +61,6 @@ describe('Тестирование экшенов слайса userInfo', () => 
   });
 
   describe('Тестирование loginUser', () => {
-    
     it('Тест fulfilled', () => {
       const state = userInfoSliceReducer(
         initialState,
@@ -72,7 +69,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -88,7 +85,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading;   
+      const status = state.loading;
       expect(status).toBeTruthy();
     });
 
@@ -100,7 +97,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -119,7 +116,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -136,7 +133,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
       expect(status).toBeTruthy();
       expect(success).toBeFalsy();
@@ -151,7 +148,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
       expect(status).toBeFalsy();
       expect(success).toBeFalsy();
@@ -168,7 +165,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -185,7 +182,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
       expect(status).toBeTruthy();
       expect(success).toBeFalsy();
@@ -200,7 +197,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
           password: '123'
         })
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
       expect(status).toBeFalsy();
       expect(success).toBeFalsy();
@@ -213,7 +210,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
         initialState,
         logoutUser.fulfilled(undefined, '')
       );
-      const status = state.loading; 
+      const status = state.loading;
       const user = state.user;
       const success = state.success;
       expect(status).toBeFalsy();
@@ -226,7 +223,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
         initialState,
         logoutUser.pending('fulfilled')
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
       expect(status).toBeTruthy();
       expect(success).toBeFalsy();
@@ -237,7 +234,7 @@ describe('Тестирование экшенов слайса userInfo', () => 
         initialState,
         logoutUser.rejected(new Error('error'), 'rejected')
       );
-      const status = state.loading; 
+      const status = state.loading;
       const success = state.success;
       expect(status).toBeFalsy();
       expect(success).toBeFalsy();
